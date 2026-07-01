@@ -1,142 +1,739 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ejoh C Joseph Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejoh Joseph — Data Analyst</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0b1120;
+    --navy2: #111827;
+    --blue: #2563eb;
+    --blue-light: #3b82f6;
+    --cyan: #06b6d4;
+    --white: #f8fafc;
+    --muted: #94a3b8;
+    --card: #141e2e;
+    --border: #1e2d42;
+    --accent: #f59e0b;
+  }
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Ejoh C Joseph Portfolio<br />
-						</h1>
-						<p>I transform raw data into clear, actionable insights using SQL, Power BI, and Excel to help businesses make smarter decisions <a href="https://www.linkedin.com/in/joseph-ejoh-a8128825a/">@EjohJoseph</a> 
-						
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+  html { scroll-behavior: smooth; }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Ejoh Joseph</a>
-					</header>
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+    cursor: none;
+  }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
+  /* Custom cursor */
+  .cursor {
+    width: 10px; height: 10px;
+    background: var(--blue);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9999;
+    transition: transform 0.15s ease;
+  }
+  .cursor-ring {
+    width: 36px; height: 36px;
+    border: 1.5px solid var(--blue-light);
+    border-radius: 50%;
+    position: fixed; top: 0; left: 0;
+    pointer-events: none; z-index: 9998;
+    transition: transform 0.35s ease, opacity 0.3s;
+    opacity: 0.5;
+  }
 
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/joseph-ejoh-a8128825a/" class="icon brands alt fa-linkedin"><span class="label">fa-linkedin</span></a></li>
-							<li><a href="https://github.com/JosephEjoh" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-					</nav>
+  /* Noise overlay */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.4;
+  }
 
-				<!-- Main -->
-					<div id="main">
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.25rem 4rem;
+    background: rgba(11,17,32,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800; font-size: 1.1rem;
+    color: var(--white); text-decoration: none;
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--blue); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; color: var(--muted);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--blue); color: white;
+    padding: 0.5rem 1.25rem; border-radius: 6px;
+    font-size: 0.85rem; font-weight: 500;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--blue-light); }
 
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									
-									<h2><a href="#">Mobile Phone Sales<br />
-									</a></h2>
-									<p>This project involves the development of an interactive Power BI dashboard for a mobile phone store. The dashboard provides deep insights into sales performance, regional distribution, customer demographics, and product preferences..</p>
-								</header>
-								<a href="https://github.com/JosephEjoh/Mobile_Phone_Sales" class="image main"><img src="images/1.png" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/JosephEjoh/Mobile_Phone_Sales" class="button large">Full project</a></li>
-								</ul>
-							</article>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    padding: 8rem 4rem 4rem;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: radial-gradient(ellipse 70% 60% at 70% 50%, rgba(37,99,235,0.12) 0%, transparent 70%),
+                radial-gradient(ellipse 40% 40% at 20% 80%, rgba(6,182,212,0.07) 0%, transparent 60%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; z-index: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    opacity: 0.3;
+  }
+  .hero-content { position: relative; z-index: 1; max-width: 750px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3);
+    padding: 0.35rem 1rem; border-radius: 100px;
+    font-size: 0.8rem; font-weight: 500; color: var(--blue-light);
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 1.75rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-tag::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--cyan); border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.8); }
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    font-weight: 800; line-height: 1.0;
+    letter-spacing: -0.03em;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  h1 .line2 { color: var(--blue); display: block; }
+  .hero-sub {
+    font-size: 1.15rem; font-weight: 300; color: var(--muted);
+    line-height: 1.7; max-width: 560px;
+    margin: 1.5rem 0 2.5rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--blue); color: white;
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-size: 0.95rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid transparent;
+  }
+  .btn-primary:hover {
+    background: var(--blue-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37,99,235,0.35);
+  }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-size: 0.95rem; font-weight: 500;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid var(--border);
+  }
+  .btn-secondary:hover {
+    border-color: var(--blue);
+    transform: translateY(-2px);
+  }
+  .hero-stats {
+    display: flex; gap: 3rem; margin-top: 4rem;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem; font-weight: 800;
+    color: var(--white);
+  }
+  .stat-num span { color: var(--blue); }
+  .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<span class="date">June 24, 2025</span>
-										<h2><a href="#">Cost-and-Profitability-Analysis-of-Food-Orders-in-New-Delhi<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/JosephEjoh/Cost-and-Profitability-Analysis-of-Food-Orders-in-New-Delhi" class="image fit"><img src="images/Screenshot 2025-06-23 050407.png" alt="" /></a>
-									<p>The goal is to identify unprofitable patterns and simulate strategic changes to improve margins.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/JosephEjoh/Cost-and-Profitability-Analysis-of-Food-Orders-in-New-Delhi" class="button">Full Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<span class="date">May 7, 2025</span>
-										<h2><a href="#">MySQL Data Analytics Assessment<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" class="image fit"><img src="images/Screenshot 2025-04-27 041324 SQL.png" alt="" /></a>
-									<p>This repository contains mySQL solutions to the Cowrywise Data Analyst technical assessment. It includes SQL queries to answer business-driven questions, with an emphasis on financial behavior, customer segmentation, and retention analysis.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" class="button">Full Project</a></li>
-									</ul>
-								</article>
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
 
+  /* FLOATING CARDS */
+  .hero-float {
+    position: absolute; right: 4rem; top: 50%;
+    transform: translateY(-50%);
+    display: flex; flex-direction: column; gap: 1rem;
+    z-index: 1;
+    animation: fadeUp 0.8s 0.5s ease both;
+  }
+  .float-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px; padding: 1rem 1.25rem;
+    min-width: 200px;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .float-card:hover { transform: translateX(-4px); border-color: var(--blue); }
+  .float-card-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .float-card-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+  .float-card-value { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; margin-top: 0.2rem; }
 
+  /* SECTIONS */
+  section { padding: 6rem 4rem; position: relative; z-index: 1; }
+  .section-label {
+    font-size: 0.75rem; font-weight: 500;
+    color: var(--blue-light); text-transform: uppercase;
+    letter-spacing: 0.15em; margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 0.75rem;
+  }
+  .section-label::before {
+    content: ''; width: 24px; height: 1px; background: var(--blue);
+  }
+  h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800; letter-spacing: -0.02em;
+    margin-bottom: 3rem; line-height: 1.15;
+  }
+  h2 em { font-style: normal; color: var(--blue); }
 
+  /* SKILLS */
+  .skills-section { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .skill-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 14px; padding: 1.75rem;
+    transition: all 0.3s; position: relative; overflow: hidden;
+  }
+  .skill-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .skill-card:hover { border-color: var(--blue); transform: translateY(-3px); }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .skill-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.05rem; font-weight: 700; margin-bottom: 0.75rem;
+  }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .tag {
+    background: rgba(37,99,235,0.1); border: 1px solid rgba(37,99,235,0.2);
+    color: var(--blue-light); font-size: 0.75rem; font-weight: 500;
+    padding: 0.2rem 0.65rem; border-radius: 100px;
+  }
 
-					
+  /* PROJECTS */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  .project-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2rem;
+    transition: all 0.3s; position: relative;
+    display: flex; flex-direction: column;
+  }
+  .project-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.3); }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+  .project-icon {
+    width: 48px; height: 48px; border-radius: 12px;
+    background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.25);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .project-date { font-size: 0.75rem; color: var(--muted); }
+  .project-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem; font-weight: 700;
+    margin-bottom: 0.75rem; line-height: 1.3;
+  }
+  .project-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.65; flex: 1; }
+  .project-highlight {
+    margin-top: 1.25rem; padding: 0.75rem 1rem;
+    background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2);
+    border-radius: 8px; font-size: 0.82rem; color: var(--accent);
+  }
+  .project-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
 
-				
+  /* EXPERIENCE */
+  .experience-section { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .timeline { position: relative; padding-left: 2rem; }
+  .timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 8px; bottom: 0;
+    width: 1px; background: var(--border);
+  }
+  .timeline-item {
+    position: relative; padding-bottom: 3rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .timeline-item::before {
+    content: ''; position: absolute;
+    left: -2.375rem; top: 6px;
+    width: 10px; height: 10px;
+    background: var(--blue); border-radius: 50%;
+    border: 2px solid var(--navy2);
+    box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+  }
+  .timeline-date {
+    font-size: 0.78rem; color: var(--blue-light);
+    font-weight: 500; letter-spacing: 0.05em;
+    text-transform: uppercase; margin-bottom: 0.5rem;
+  }
+  .timeline-role {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem; font-weight: 700;
+  }
+  .timeline-company { font-size: 0.9rem; color: var(--muted); margin-bottom: 1rem; }
+  .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .timeline-bullets li {
+    font-size: 0.9rem; color: #cbd5e1; line-height: 1.6;
+    padding-left: 1.25rem; position: relative;
+  }
+  .timeline-bullets li::before {
+    content: '→'; position: absolute; left: 0;
+    color: var(--blue); font-size: 0.8rem;
+  }
 
+  /* CONTACT */
+  .contact-section {
+    text-align: center;
+    background: linear-gradient(180deg, var(--navy) 0%, rgba(37,99,235,0.05) 100%);
+  }
+  .contact-card {
+    max-width: 600px; margin: 0 auto;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 20px; padding: 3rem;
+  }
+  .contact-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+  .contact-link {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: rgba(255,255,255,0.05); border: 1px solid var(--border);
+    color: var(--white); text-decoration: none;
+    padding: 0.65rem 1.25rem; border-radius: 8px;
+    font-size: 0.9rem; transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: var(--blue); background: rgba(37,99,235,0.1); transform: translateY(-2px); }
 
-						<section class="split contact">
-							<section class="alt">
-								<h3>Location</h3>
-								<p><br />
-								Nigeria, Abuja, </p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(081) 412-57026</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">Josephcejoh@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									
-									<li><a href="https://www.linkedin.com/in/joseph-ejoh-a8128825a/" class="icon brands alt fa-linkedin"><span class="label">fa-linkedin</span></a></li>
-									<li><a href="https://github.com/JosephEjoh" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
+  /* FOOTER */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 0.82rem; color: var(--muted);
+  }
+  footer a { color: var(--blue-light); text-decoration: none; }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-			</div>
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { padding: 6rem 1.5rem 3rem; }
+    .hero-float { display: none; }
+    section { padding: 4rem 1.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .hero-stats { gap: 2rem; }
+  }
+</style>
+</head>
+<body>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
 
-	</body>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">EJ<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="mailto:josephcejoh@gmail.com" class="nav-cta">Hire Me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Available for Remote Roles</div>
+    <h1>
+      Ejoh Joseph
+      <span class="line2">Data Analyst</span>
+    </h1>
+    <p class="hero-sub">
+      I transform raw data into decisions. Power BI dashboards, SQL analytics, Python automation — built for teams that need clarity, not just charts.
+    </p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="mailto:josephcejoh@gmail.com" class="btn-secondary">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">4<span>+</span></div>
+        <div class="stat-label">Data Projects</div>
+      </div>
+      <div>
+        <div class="stat-num">1K<span>+</span></div>
+        <div class="stat-label">Records Analysed</div>
+      </div>
+      <div>
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Tools Mastered</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-float">
+    <div class="float-card">
+      <div class="float-card-icon">📊</div>
+      <div class="float-card-label">Primary Tool</div>
+      <div class="float-card-value">Power BI + DAX</div>
+    </div>
+    <div class="float-card">
+      <div class="float-card-icon">🗃️</div>
+      <div class="float-card-label">Database</div>
+      <div class="float-card-value">MySQL / SQL</div>
+    </div>
+    <div class="float-card">
+      <div class="float-card-icon">🐍</div>
+      <div class="float-card-label">Scripting</div>
+      <div class="float-card-value">Python + Pandas</div>
+    </div>
+    <div class="float-card">
+      <div class="float-card-icon">📍</div>
+      <div class="float-card-label">Location</div>
+      <div class="float-card-value">Nigeria (Remote)</div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <div class="section-label">What I Bring</div>
+  <h2>Core <em>Skills</em> & Tools</h2>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">📈</div>
+      <div class="skill-title">Dashboard Development</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Building interactive, executive-level dashboards that give stakeholders real visibility into business performance.</p>
+      <div class="skill-tags">
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Data Modelling</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🗄️</div>
+      <div class="skill-title">SQL & Data Querying</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Writing complex queries — joins, CTEs, window functions — to extract, segment, and analyse data at scale.</p>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">CTEs</span>
+        <span class="tag">Window Functions</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🐍</div>
+      <div class="skill-title">Python Analysis</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Automating data cleaning, transformation, and analysis workflows using Python and Pandas.</p>
+      <div class="skill-tags">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Jupyter</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📊</div>
+      <div class="skill-title">Excel & Reporting</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Advanced Excel for data preparation, Pivot Tables, Power Query, and structured business reports.</p>
+      <div class="skill-tags">
+        <span class="tag">Power Query</span>
+        <span class="tag">Pivot Tables</span>
+        <span class="tag">Formulas</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🔍</div>
+      <div class="skill-title">Exploratory Analysis</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Deep-dive EDA to uncover patterns, anomalies, and opportunities hidden in raw datasets.</p>
+      <div class="skill-tags">
+        <span class="tag">EDA</span>
+        <span class="tag">Data Cleaning</span>
+        <span class="tag">KPI Tracking</span>
+      </div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🤝</div>
+      <div class="skill-title">Stakeholder Communication</div>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.6">Translating technical findings into clear, actionable insights for non-technical audiences and leadership.</p>
+      <div class="skill-tags">
+        <span class="tag">Reporting</span>
+        <span class="tag">Documentation</span>
+        <span class="tag">Remote-Ready</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">Portfolio</div>
+  <h2>Featured <em>Projects</em></h2>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🍕</div>
+        <span class="project-date">Sep 2025</span>
+      </div>
+      <div class="project-title">Food Delivery Cost & Profitability Analysis</div>
+      <p class="project-desc">Investigated 1,000+ transaction-level records to identify pricing inconsistencies, revenue leakage, and margin variability across a food delivery platform.</p>
+      <div class="project-highlight">💡 Modelled double-digit % improvement in unit-level profitability through tighter discount controls</div>
+      <div class="project-tools">
+        <span class="tag">Python</span>
+        <span class="tag">Pandas</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Jupyter</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">👥</div>
+        <span class="project-date">Nov 2025</span>
+      </div>
+      <div class="project-title">Customer Analytics & CLV Segmentation</div>
+      <p class="project-desc">Queried customer transaction data to segment users into high-value, low-engagement, and dormant groups. Built time-based logic to flag inactive accounts and estimate CLV.</p>
+      <div class="project-highlight">💡 CLV modelling enabled prioritisation of top-tier customer segments for resource allocation</div>
+      <div class="project-tools">
+        <span class="tag">MySQL</span>
+        <span class="tag">CTEs</span>
+        <span class="tag">Window Functions</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">📱</div>
+        <span class="project-date">May 2025</span>
+      </div>
+      <div class="project-title">Mobile Phone Sales Dashboard</div>
+      <p class="project-desc">3-page interactive Power BI dashboard analysing $15M in sales across 5 brands, multiple regions, and customer demographics. Includes customer analytics and product trend pages.</p>
+      <div class="project-highlight">💡 Online sales channel identified as consistently outperforming retail year-round</div>
+      <div class="project-tools">
+        <span class="tag">Power BI</span>
+        <span class="tag">DAX</span>
+        <span class="tag">Excel</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">🏦</div>
+        <span class="project-date">2025</span>
+      </div>
+      <div class="project-title">Cowrywise Fintech SQL Assessment</div>
+      <p class="project-desc">MySQL solutions to a real fintech technical assessment — covering cross-sell identification, transaction frequency segmentation, account inactivity alerts, and CLV estimation.</p>
+      <div class="project-highlight">💡 Demonstrated defensive SQL (null handling, division-by-zero guards, kobo→naira conversion)</div>
+      <div class="project-tools">
+        <span class="tag">MySQL</span>
+        <span class="tag">Financial Analytics</span>
+        <span class="tag">Segmentation</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-header">
+        <div class="project-icon">📋</div>
+        <span class="project-date">Jun 2025</span>
+      </div>
+      <div class="project-title">Survey & Business Insights Dashboard</div>
+      <p class="project-desc">Analysed survey data to surface operational gaps and business challenges. Built executive-level Power BI dashboards to support data-driven decision-making.</p>
+      <div class="project-highlight">💡 Delivered visual summaries to non-technical stakeholders for strategic planning</div>
+      <div class="project-tools">
+        <span class="tag">Power BI</span>
+        <span class="tag">Excel</span>
+        <span class="tag">Data Storytelling</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal" style="border-style: dashed; display:flex; align-items:center; justify-content:center; text-align:center; min-height:220px;">
+      <div>
+        <div style="font-size:2rem;margin-bottom:0.75rem;">🚧</div>
+        <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.5rem;">More Coming Soon</div>
+        <p style="font-size:0.85rem;color:var(--muted)">New projects in progress — follow on GitHub for updates</p>
+        <a href="https://github.com/JosephEjoh" target="_blank" style="display:inline-block;margin-top:1rem;color:var(--blue-light);font-size:0.85rem;text-decoration:none;">→ GitHub Profile</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience-section" id="experience">
+  <div class="section-label">Background</div>
+  <h2>Work <em>Experience</em></h2>
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">Dec 2025 – Jan 2026</div>
+      <div class="timeline-role">Business & Data Analysis Intern — Team Lead</div>
+      <div class="timeline-company">Excelerate · Remote</div>
+      <ul class="timeline-bullets">
+        <li>Analysed business datasets to extract insights for stakeholder reporting</li>
+        <li>Built structured visual reports for non-technical audiences</li>
+        <li>Led quality assurance reviews ensuring accuracy and consistency across deliverables</li>
+        <li>Coordinated team tasks and resolved blockers to consistently meet project timelines</li>
+      </ul>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-date">May 2023 – Present</div>
+      <div class="timeline-role">Software Engineer / Technical Support Specialist</div>
+      <div class="timeline-company">Emab Plaza · Abuja, Nigeria</div>
+      <ul class="timeline-bullets">
+        <li>Applied systematic analytical thinking to diagnose and resolve complex faults</li>
+        <li>Maintained detailed service records, identifying patterns to drive operational improvements</li>
+        <li>Communicated technical findings clearly to non-technical clients</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Certifications -->
+  <div style="margin-top:3rem;" class="reveal">
+    <div class="section-label">Credentials</div>
+    <h2>Education & <em>Certifications</em></h2>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;">
+      <div class="float-card" style="flex:1;min-width:240px;">
+        <div class="float-card-icon">🎓</div>
+        <div class="float-card-label">Degree</div>
+        <div class="float-card-value">B.Sc. Biochemistry</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem">Bingham University, Nigeria</div>
+      </div>
+      <div class="float-card" style="flex:1;min-width:240px;">
+        <div class="float-card-icon">🏅</div>
+        <div class="float-card-label">Certification</div>
+        <div class="float-card-value">Skillz Africa Data Analytics</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem">2025</div>
+      </div>
+      <div class="float-card" style="flex:1;min-width:240px;">
+        <div class="float-card-icon">🏅</div>
+        <div class="float-card-label">Certification</div>
+        <div class="float-card-value">Excelerate Data Visualisation</div>
+        <div style="font-size:0.8rem;color:var(--muted);margin-top:0.25rem">Saint Louis University collaboration · 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-label" style="justify-content:center">Let's Work Together</div>
+  <h2 style="text-align:center">Open to <em>Remote</em> Opportunities</h2>
+  <div class="contact-card reveal">
+    <p style="color:var(--muted);font-size:1rem;line-height:1.7;margin-bottom:1.5rem">
+      I'm actively seeking remote data analyst roles with international organisations. If you're looking for someone who can turn your data into decisions — let's talk.
+    </p>
+    <a href="mailto:josephcejoh@gmail.com" class="btn-primary" style="display:inline-block">
+      📧 josephcejoh@gmail.com
+    </a>
+    <div class="contact-links">
+      <a href="tel:+2348141257026" class="contact-link">📞 +234 814 125 7026</a>
+      <a href="https://github.com/JosephEjoh" target="_blank" class="contact-link">🐙 GitHub</a>
+      <a href="https://linkedin.com/in/joseph-ejoh" target="_blank" class="contact-link">💼 LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>© 2026 Ejoh Joseph Chukwukwa — Data Analyst</span>
+  <span>Built with purpose · Nigeria 🇳🇬</span>
+</footer>
+
+<script>
+  // Custom cursor
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 5}px, ${my - 5}px)`;
+  });
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Hover cursor scale
+  document.querySelectorAll('a, button, .skill-card, .project-card, .float-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursor.style.transform += ' scale(2)';
+      ring.style.opacity = '0.9';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.opacity = '0.5';
+    });
+  });
+</script>
+</body>
 </html>
