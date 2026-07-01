@@ -28,7 +28,6 @@
     background: var(--navy);
     color: var(--white);
     overflow-x: hidden;
-    cursor: none;
   }
 
   /* Custom cursor */
@@ -291,6 +290,15 @@
     border-radius: 8px; font-size: 0.82rem; color: var(--accent);
   }
   .project-tools { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.25rem; }
+  .github-btn {
+    display: inline-block; margin-top: 1.25rem;
+    background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.35);
+    color: var(--blue-light); text-decoration: none;
+    padding: 0.5rem 1rem; border-radius: 7px;
+    font-size: 0.85rem; font-weight: 500;
+    transition: all 0.2s; cursor: pointer;
+  }
+  .github-btn:hover { background: var(--blue); color: white; border-color: var(--blue); }
 
   /* EXPERIENCE */
   .experience-section { background: var(--navy2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
@@ -524,7 +532,7 @@
   <h2>Featured <em>Projects</em></h2>
   <div class="projects-grid">
 
-    <a href="https://github.com/JosephEjoh/Cost-and-Profitability-Analysis-of-Food-Orders-in-New-Delhi" target="_blank" class="project-card reveal" style="text-decoration:none;color:inherit;">
+    <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">🍕</div>
         <span class="project-date">Sep 2025</span>
@@ -538,10 +546,10 @@
         <span class="tag">Excel</span>
         <span class="tag">Jupyter</span>
       </div>
-      <div style="margin-top:1rem;font-size:0.82rem;color:var(--blue-light);">→ View on GitHub</div>
-    </a>
+      <a href="https://github.com/JosephEjoh/Cost-and-Profitability-Analysis-of-Food-Orders-in-New-Delhi" target="_blank" class="github-btn">🐙 View on GitHub</a>
+    </div>
 
-    <a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" target="_blank" class="project-card reveal" style="text-decoration:none;color:inherit;">
+    <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">👥</div>
         <span class="project-date">Nov 2025</span>
@@ -554,10 +562,10 @@
         <span class="tag">CTEs</span>
         <span class="tag">Window Functions</span>
       </div>
-      <div style="margin-top:1rem;font-size:0.82rem;color:var(--blue-light);">→ View on GitHub</div>
-    </a>
+      <a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" target="_blank" class="github-btn">🐙 View on GitHub</a>
+    </div>
 
-    <a href="https://github.com/JosephEjoh/Mobile_Phone_Sales" target="_blank" class="project-card reveal" style="text-decoration:none;color:inherit;">
+    <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">📱</div>
         <span class="project-date">May 2025</span>
@@ -570,10 +578,10 @@
         <span class="tag">DAX</span>
         <span class="tag">Excel</span>
       </div>
-      <div style="margin-top:1rem;font-size:0.82rem;color:var(--blue-light);">→ View on GitHub</div>
-    </a>
+      <a href="https://github.com/JosephEjoh/Mobile_Phone_Sales" target="_blank" class="github-btn">🐙 View on GitHub</a>
+    </div>
 
-    <a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" target="_blank" class="project-card reveal" style="text-decoration:none;color:inherit;">
+    <div class="project-card reveal">
       <div class="project-header">
         <div class="project-icon">🏦</div>
         <span class="project-date">2025</span>
@@ -586,8 +594,8 @@
         <span class="tag">Financial Analytics</span>
         <span class="tag">Segmentation</span>
       </div>
-      <div style="margin-top:1rem;font-size:0.82rem;color:var(--blue-light);">→ View on GitHub</div>
-    </a>
+      <a href="https://github.com/JosephEjoh/DataAnalytics_Assesment" target="_blank" class="github-btn">🐙 View on GitHub</a>
+    </div>
 
     <div class="project-card reveal">
       <div class="project-header">
